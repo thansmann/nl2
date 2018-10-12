@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+echo "Testing the 'egg' functionality"
+
+EXPECTED_NAME_COUNT=52
+
+pushd nl2-resource-repo
+   chmod 755 nl2.pl
+   mkdir bin
+   SYMLINKABLE_NAME_COUNT=$(nl2.pl --egg | egrep '^ln' | wc -l | tr -d ' ')
+popd
+
+if [[ $SYMLINKABLE_NAME_COUNT -eq $EXPECTED_NAME_COUNT ]]; then
+   echo Done.
+   exit 0
+else
+   echo "Expected $EXPECTED_NAME_COUNT, but got $SYMLINKABLE_NAME_COUNT"
+   exit 1
+fi
