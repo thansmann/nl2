@@ -3,7 +3,7 @@ resources: ####
   type: git
   check_every: 10m
   source:
-    uri: git@github.com:thansmann/nl2.git
+    uri: https://github.com/thansmann/nl2.git
     branch: master
     git_config:
     - name: user.name
