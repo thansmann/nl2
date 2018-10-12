@@ -1,0 +1,12 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: canonical/bionic
+    
+inputs:
+- name: nl2-resource-repo
+
+run:
+  path: nl2-resource-repo/ci/tasks/test/run
