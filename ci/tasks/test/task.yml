@@ -3,8 +3,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: canonical/bionic
-    
+    repository: perl/latest
+
 inputs:
 - name: nl2-resource-repo
 
