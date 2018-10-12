@@ -18,5 +18,6 @@ jobs: ####
   - get: nl2-resource-repo
     trigger: true
     version: every
-  - task: egg-test
-    file: nl2-resource-repo/ci/tasks/test/task.yml
+  - aggregate:
+    - task: egg-test
+      file: ci/tasks/test/task.yml
