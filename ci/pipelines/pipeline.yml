@@ -1,0 +1,22 @@
+resources: ####
+- name: nl2-resource-repo
+  type: git
+  check_every: 10m
+  source:
+    uri: git@github.com:thansmann/nl2.git
+    branch: master
+    git_config:
+    - name: user.name
+      value: Tony Hansmann
+    - name: user.email
+      value: thansmann+githubrobot@pivotal.io
+
+jobs: ####
+- name: test-egg
+  public: true
+  plan:
+  - get: nl2-resource-repo
+    trigger: true
+    version: every
+  - task: egg-test
+    file: nl2/ci/tasks/test/task.yml
