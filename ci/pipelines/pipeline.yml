@@ -20,4 +20,4 @@ jobs: ####
     version: every
   - aggregate:
     - task: egg-test
-      file: ci/tasks/test/task.yml
+      file: nl2-resource-repo/ci/tasks/test/task.yml
