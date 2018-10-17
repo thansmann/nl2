@@ -5,11 +5,6 @@ resources: ####
   source:
     uri: https://github.com/thansmann/nl2.git
     branch: master
-    git_config:
-    - name: user.name
-      value: Tony Hansmann
-    - name: user.email
-      value: thansmann+githubrobot@pivotal.io
 
 jobs: ####
 - name: test-egg
