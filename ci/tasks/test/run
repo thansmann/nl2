@@ -9,9 +9,9 @@ echo "Testing the 'egg' functionality"
 EXPECTED_NAME_COUNT=52
 
 
-chmod 755 nl2.pl
+chmod 755 nl2-resource-repo/nl2.pl
 mkdir bin
-SYMLINKABLE_NAME_COUNT=$(nl2.pl --egg | egrep '^ln' | wc -l | tr -d ' ')
+SYMLINKABLE_NAME_COUNT=$(nl2-resource-repo/nl2.pl --egg | egrep '^ln' | wc -l | tr -d ' ')
 
 
 if [[ $SYMLINKABLE_NAME_COUNT -eq $EXPECTED_NAME_COUNT ]]; then
