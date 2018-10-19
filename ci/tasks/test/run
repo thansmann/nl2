@@ -4,14 +4,15 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-echo "Testing the 'egg' functionality"
+echo 'how does this come out? nl2-resource-repo'
+echo "Testing the 'egg' functionality in nl2-resource-repo"
 
 EXPECTED_NAME_COUNT=52
 
 
 chmod 755 nl2-resource-repo/52_lines
 mkdir bin
-SYMLINKABLE_NAME_COUNT=$(nl2-resource-repo/52_lines --egg | egrep '^ln' | wc -l | tr -d ' ')
+SYMLINKABLE_NAME_COUNT=$(nl2-resource-repo/52_lines | egrep '^ln' | wc -l | tr -d ' ')
 
 
 if [[ $SYMLINKABLE_NAME_COUNT -eq $EXPECTED_NAME_COUNT ]]; then
