@@ -9,11 +9,11 @@ echo "Testing the 'egg' functionality in nl2-resource-repo"
 
 EXPECTED_NAME_COUNT=52
 
-
-chmod 755 nl2-resource-repo/52_lines
-mkdir bin
-SYMLINKABLE_NAME_COUNT=$(nl2-resource-repo/52_lines | egrep '^ln' | wc -l | tr -d ' ')
-
+pushd nl2-resource-repo
+  chmod 755 nl2-resource-repo/52_lines
+  mkdir bin
+  SYMLINKABLE_NAME_COUNT=$(./52_lines | egrep '^ln' | wc -l | tr -d ' ')
+popd
 
 if [[ $SYMLINKABLE_NAME_COUNT -eq $EXPECTED_NAME_COUNT ]]; then
    echo Done.
