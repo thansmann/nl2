@@ -11,8 +11,8 @@ EXPECTED_NAME_COUNT=52
 
 pushd nl2-resource-repo
   chmod 755 52_lines
-  mkdir bin
-  SYMLINKABLE_NAME_COUNT=$(./52_lines | egrep '^ln' | wc -l | tr -d ' ')
+  mkdir -p bin
+  SYMLINKABLE_NAME_COUNT=$(./52_lines | wc -l | tr -d ' ')
 popd
 
 if [[ $SYMLINKABLE_NAME_COUNT -eq $EXPECTED_NAME_COUNT ]]; then
